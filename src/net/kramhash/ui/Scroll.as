@@ -1,7 +1,7 @@
-package net.kramhash.ui
-{
+package net.kramhash.ui {
+	import net.kramhash.events.ScrollEvent;
+
 	import flash.display.DisplayObject;
-	import flash.display.DisplayObjectContainer;
 	import flash.display.InteractiveObject;
 	import flash.display.MovieClip;
 	import flash.display.Shape;
@@ -11,17 +11,12 @@ package net.kramhash.ui
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	
-	import net.kramhash.events.ScrollEvent;
-	import net.saqoosha.display.Stage;
-	
-	import nl.demonsters.debugger.MonsterDebugger;
-	
 	[Event(name="update", type="net.kramhash.events.ScrollEvent")]
 	
 	public class Scroll extends Sprite
 	{
 		public static const UPDATE:String = 'update';
-		protected var handle:InteractiveObject
+		protected var handle:InteractiveObject;
 		protected var dummyArea:Shape;
 		protected var _inertia:Boolean;
 		public function set intertia(v:Boolean):void {
@@ -130,7 +125,7 @@ package net.kramhash.ui
 			offset.y = -e.localY;
 			_dragged = true;
 			this.addEventListener(MouseEvent.MOUSE_UP, _stopDrag);
-			Stage.sigMouseUp.add(_stopDrag);
+//			Stage.sigMouseUp.add(_stopDrag);
 			vector.y = handle.y;
 			lastPosition.y = 0;
 		}
@@ -154,7 +149,7 @@ package net.kramhash.ui
 //			this.removeEventListener(Event.ENTER_FRAME, _drag);
 			_dragged = false;
 			this.removeEventListener(MouseEvent.MOUSE_UP, _stopDrag);
-			Stage.sigMouseUp.remove(_stopDrag);
+//			Stage.sigMouseUp.remove(_stopDrag);
 			
 //			this.addEventListener(Event.ENTER_FRAME, _brake);
 		}

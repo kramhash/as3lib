@@ -25,7 +25,7 @@ package net.kramhash.graphics
 			g.endFill();
 		}
 		
-		public static function drawPie(g:Graphics, x:int, y:int, radius:int, startAngle:Number, endAngle:Number, div:int = 10):void
+		public static function drawPie(g:Graphics, x:int, y:int, radius:int, startAngle:Number, endAngle:Number, lineTo:Boolean=false, div:int = 10):void
 		{
 			startAngle = startAngle * RADIAN;
 			endAngle = endAngle * RADIAN;
@@ -39,7 +39,11 @@ package net.kramhash.graphics
 				var cx:Number = ax + radius * Math.tan(rad/2) * Math.cos(ct - RIGHT_RADIAN);
 				var cy:Number = ay + radius * Math.tan(rad/2) * Math.sin(ct - RIGHT_RADIAN);
 				if(i == 0){
-					g.moveTo(ax, ay);
+					if(lineTo){
+						g.lineTo(ax, ay);
+					} else {
+						g.moveTo(ax, ay);
+					}
 				}else{
 					g.curveTo(cx, cy, ax, ay);
 				}

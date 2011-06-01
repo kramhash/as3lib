@@ -1,4 +1,4 @@
-package sounds
+package net.kramhash.sounds
 {
 	import flash.events.EventDispatcher;
 	import flash.events.IEventDispatcher;

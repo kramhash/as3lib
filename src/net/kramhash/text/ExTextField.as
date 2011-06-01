@@ -1,14 +1,11 @@
-package net.kramhash.text
-{
+package net.kramhash.text {
+	import net.kramhash.geom.ColorUtil;
+
 	import flash.events.Event;
 	import flash.events.FocusEvent;
-	import flash.events.KeyboardEvent;
 	import flash.filters.ColorMatrixFilter;
 	import flash.text.TextField;
 	
-	import net.kramhash.geom.ColorUtil;
-	
-	import nl.demonsters.debugger.MonsterDebugger;
 	
 	public class ExTextField extends TextField
 	{
